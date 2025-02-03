@@ -1,4 +1,4 @@
 #! /usr/bin/env opal
-// `print ["Hello there.\n"]` would also work for this example
+// `print ["Hello there.\n"];` would also work for this example
 
 say ["Hello there."];

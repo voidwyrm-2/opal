@@ -1,4 +1,5 @@
 #! /usr/bin/env opal
 // recursive fibanocci
 
+/// [number] -> number
 fun fib = 0 if #1 < 2 else @fib [#1 - 1] + @fib [#1 - 2];

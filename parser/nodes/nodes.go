@@ -1,8 +1,8 @@
 package nodes
 
-import "github.com/voidwyrm-2/opal/interpreter/scope"
+import "github.com/voidwyrm-2/opal/interpreter/valuetypes"
 
 type Node interface {
-	Execute(vars map[string]string) error
+	Execute(vars map[string]valuetypes.ValueType) error
 	Str() string
 }

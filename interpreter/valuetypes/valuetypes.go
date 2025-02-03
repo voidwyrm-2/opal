@@ -3,17 +3,18 @@ package valuetypes
 type ValueType interface {
 	Fmt() string
 	Lit() any
-	Add(st ValueType) (ValueType, error)
-	Concat(vt ValueType) (ValueType, error)
-	Sub(st ValueType) (ValueType, error)
-	Mul(st ValueType) (ValueType, error)
-	Div(st ValueType) (ValueType, error)
-	Mod(st ValueType) (ValueType, error)
-	BitAnd(st ValueType) (ValueType, error)
-	BitOr(st ValueType) (ValueType, error)
-	BitXOR(st ValueType) (ValueType, error)
-	Equals(st ValueType) (ValueType, error)
-	NotEquals(st ValueType) (ValueType, error)
-	GreaterThan(st ValueType) (ValueType, error)
-	LesserThan(st ValueType) (ValueType, error)
+	Type() string
+	Add(val ValueType) (ValueType, error)
+	Concat(val ValueType) (ValueType, error)
+	Sub(val ValueType) (ValueType, error)
+	Mul(val ValueType) (ValueType, error)
+	Div(val ValueType) (ValueType, error)
+	Mod(val ValueType) (ValueType, error)
+	BitAnd(val ValueType) (ValueType, error)
+	BitOr(val ValueType) (ValueType, error)
+	BitXOR(val ValueType) (ValueType, error)
+	Equals(val ValueType) (ValueType, error)
+	NotEquals(val ValueType) (ValueType, error)
+	GreaterThan(val ValueType) (ValueType, error)
+	LesserThan(val ValueType) (ValueType, error)
 }

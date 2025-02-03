@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/voidwyrm-2/opal/interpreter/valuetypes/listtype"
+	"github.com/voidwyrm-2/opal/interpreter/valuetypes/numbertype"
 	"github.com/voidwyrm-2/opal/lexer"
 )
 
@@ -14,16 +16,21 @@ func main() {
 
 	flag.Parse()
 
-	l := lexer.New(`// solution to challenge one, part one of Advent of Code 2015
+	llist := listtype.New(numbertype.New(10), numbertype.New(15))
+	llist.Append(numbertype.New(20))
 
-fun elevator =
-  0 if #argl == 0 else
-  elevator [tail [#1]] +
-  (1 if head [#1] == '(' else -1);
+	fmt.Println(llist.Fmt())
 
-my content = grabfile ["input.txt"];
+	if nl, err := llist.Concat(numbertype.New(25)); err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	} else {
+		fmt.Println(nl.Fmt())
+	}
 
-say [elevator [content]];`)
+	fmt.Println(llist.Fmt())
+
+	l := lexer.New(``)
 	toks, err := l.Lex()
 	if err != nil {
 		fmt.Println(err.Error())

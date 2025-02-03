@@ -1,8 +1,9 @@
 #! /usr/bin/env opal
 // solution to challenge one, part one of Advent of Code 2015
 
+/// [string] -> number
 fun elevator =
-  0 if #argl == 0 else
+  0 if len [#1] == 0 else
   @elevator [tail [#1]] +
   (1 if head [#1] == '(' else -1);
 

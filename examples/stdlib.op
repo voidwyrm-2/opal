@@ -1,0 +1,10 @@
+// some functions that will be in the standard library
+
+/// [list<T>, number] -> T
+fun indexl = head [#1] if #2 == 0 or len [#1] == 0 else indexl [tail [#1], #2 - 1]
+
+/// [list, list] -> boolean
+fun listeq =
+  listeq [tail [#1], tail [#2]] and True
+  if head [#1] == head [#2] else
+  False;
